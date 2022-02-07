@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		0AFFF38F27B0FC5400F57939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF38E27B0FC5400F57939 /* AppDelegate.swift */; };
 		0AFFF39127B0FC5400F57939 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF39027B0FC5400F57939 /* SceneDelegate.swift */; };
-		0AFFF39327B0FC5400F57939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF39227B0FC5400F57939 /* ViewController.swift */; };
 		0AFFF39627B0FC5400F57939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AFFF39427B0FC5400F57939 /* Main.storyboard */; };
 		0AFFF39827B0FC5400F57939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AFFF39727B0FC5400F57939 /* Assets.xcassets */; };
 		0AFFF39B27B0FC5400F57939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AFFF39927B0FC5400F57939 /* LaunchScreen.storyboard */; };
+		0AFFF3A527B0FCCB00F57939 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3A427B0FCCB00F57939 /* HomeViewController.swift */; };
+		0AFFF3A727B0FCE000F57939 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3A627B0FCE000F57939 /* SearchViewController.swift */; };
+		0AFFF3A927B0FD0F00F57939 /* AppTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3A827B0FD0F00F57939 /* AppTabbarController.swift */; };
+		0AFFF3AB27B0FD1F00F57939 /* RecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3AA27B0FD1F00F57939 /* RecommendListViewController.swift */; };
+		0AFFF3AD27B0FD2D00F57939 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3AC27B0FD2D00F57939 /* PlayerViewController.swift */; };
+		0AFFF3AF27B0FD4200F57939 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3AE27B0FD4200F57939 /* PlayerView.swift */; };
+		0AFFF3B127B156A500F57939 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3B027B156A500F57939 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0AFFF38B27B0FC5400F57939 /* SimpleNetflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNetflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AFFF38E27B0FC5400F57939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AFFF39027B0FC5400F57939 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0AFFF39227B0FC5400F57939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0AFFF39527B0FC5400F57939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0AFFF39727B0FC5400F57939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AFFF39A27B0FC5400F57939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AFFF39C27B0FC5400F57939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AFFF3A427B0FCCB00F57939 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0AFFF3A627B0FCE000F57939 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0AFFF3A827B0FD0F00F57939 /* AppTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabbarController.swift; sourceTree = "<group>"; };
+		0AFFF3AA27B0FD1F00F57939 /* RecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListViewController.swift; sourceTree = "<group>"; };
+		0AFFF3AC27B0FD2D00F57939 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		0AFFF3AE27B0FD4200F57939 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		0AFFF3B027B156A500F57939 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +70,13 @@
 			children = (
 				0AFFF38E27B0FC5400F57939 /* AppDelegate.swift */,
 				0AFFF39027B0FC5400F57939 /* SceneDelegate.swift */,
-				0AFFF39227B0FC5400F57939 /* ViewController.swift */,
+				0AFFF3A427B0FCCB00F57939 /* HomeViewController.swift */,
+				0AFFF3A627B0FCE000F57939 /* SearchViewController.swift */,
+				0AFFF3A827B0FD0F00F57939 /* AppTabbarController.swift */,
+				0AFFF3AA27B0FD1F00F57939 /* RecommendListViewController.swift */,
+				0AFFF3B027B156A500F57939 /* HistoryViewController.swift */,
+				0AFFF3AC27B0FD2D00F57939 /* PlayerViewController.swift */,
+				0AFFF3AE27B0FD4200F57939 /* PlayerView.swift */,
 				0AFFF39427B0FC5400F57939 /* Main.storyboard */,
 				0AFFF39727B0FC5400F57939 /* Assets.xcassets */,
 				0AFFF39927B0FC5400F57939 /* LaunchScreen.storyboard */,
@@ -138,9 +156,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AFFF39327B0FC5400F57939 /* ViewController.swift in Sources */,
+				0AFFF3A727B0FCE000F57939 /* SearchViewController.swift in Sources */,
 				0AFFF38F27B0FC5400F57939 /* AppDelegate.swift in Sources */,
+				0AFFF3A927B0FD0F00F57939 /* AppTabbarController.swift in Sources */,
+				0AFFF3AF27B0FD4200F57939 /* PlayerView.swift in Sources */,
+				0AFFF3AD27B0FD2D00F57939 /* PlayerViewController.swift in Sources */,
+				0AFFF3AB27B0FD1F00F57939 /* RecommendListViewController.swift in Sources */,
+				0AFFF3B127B156A500F57939 /* HistoryViewController.swift in Sources */,
 				0AFFF39127B0FC5400F57939 /* SceneDelegate.swift in Sources */,
+				0AFFF3A527B0FCCB00F57939 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
