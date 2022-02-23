@@ -141,12 +141,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1059.4202898550725" y="892.63392857142856"/>
+            <point key="canvasLocation" x="-1801" y="897"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--App Tabbar Controller-->
         <scene sceneID="qcA-tJ-WmA">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="f0d-SU-DME" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="f0d-SU-DME" customClass="AppTabbarController" customModule="SimpleNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u3a-2D-7SR">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -157,6 +157,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="0NM-jM-eP7"/>
+                        <segue destination="Yfc-rX-bup" kind="relationship" relationship="viewControllers" id="i9u-zw-gVt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t22-Ul-JfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -210,6 +211,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dIg-g7-3wY" id="otn-Jz-tp0"/>
+                                    <outlet property="delegate" destination="dIg-g7-3wY" id="PUb-N5-sKW"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0tK-F1-txm"/>
@@ -225,7 +230,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrO-Tl-d4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-265" y="907"/>
+            <point key="canvasLocation" x="-1065" y="897"/>
+        </scene>
+        <!--검색-->
+        <scene sceneID="1xt-q2-8B4">
+            <objects>
+                <viewController id="Yfc-rX-bup" customClass="SearchViewController" customModule="SimpleNetflix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e2O-gE-xbk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UVw-dZ-nQY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yfc-rX-bup" id="U2O-A6-qAU"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zv6-z5-EJ0">
+                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eEw-0t-Lc7">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="int-M1-MuQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ps8-9c-bLr">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TGN-Uj-weE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="TGN-Uj-weE" secondAttribute="bottom" id="ef7-Zg-z5l"/>
+                                                <constraint firstItem="TGN-Uj-weE" firstAttribute="top" secondItem="ps8-9c-bLr" secondAttribute="top" id="mW5-2Q-CgU"/>
+                                                <constraint firstItem="TGN-Uj-weE" firstAttribute="leading" secondItem="ps8-9c-bLr" secondAttribute="leading" id="zXK-Sq-rvb"/>
+                                                <constraint firstAttribute="trailing" secondItem="TGN-Uj-weE" secondAttribute="trailing" id="zex-vJ-SY2"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yfc-rX-bup" id="2WX-ia-RSk"/>
+                                    <outlet property="delegate" destination="Yfc-rX-bup" id="xfm-c6-ZZO"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fUX-CS-kCb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zv6-z5-EJ0" firstAttribute="top" secondItem="UVw-dZ-nQY" secondAttribute="bottom" id="4K7-GR-GKR"/>
+                            <constraint firstItem="Zv6-z5-EJ0" firstAttribute="leading" secondItem="fUX-CS-kCb" secondAttribute="leading" id="8wd-1F-0OP"/>
+                            <constraint firstItem="UVw-dZ-nQY" firstAttribute="top" secondItem="fUX-CS-kCb" secondAttribute="top" id="MIu-aR-wph"/>
+                            <constraint firstItem="fUX-CS-kCb" firstAttribute="bottom" secondItem="Zv6-z5-EJ0" secondAttribute="bottom" id="PXc-IV-hYy"/>
+                            <constraint firstItem="fUX-CS-kCb" firstAttribute="trailing" secondItem="Zv6-z5-EJ0" secondAttribute="trailing" id="Tnh-Jw-f1s"/>
+                            <constraint firstItem="UVw-dZ-nQY" firstAttribute="leading" secondItem="fUX-CS-kCb" secondAttribute="leading" id="Wuu-xz-3H1"/>
+                            <constraint firstItem="fUX-CS-kCb" firstAttribute="trailing" secondItem="UVw-dZ-nQY" secondAttribute="trailing" id="uVx-z9-U3h"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="9uM-M9-ZkS"/>
+                    <connections>
+                        <outlet property="resultCollectionView" destination="Zv6-z5-EJ0" id="ux4-D1-zDk"/>
+                        <outlet property="searchBar" destination="UVw-dZ-nQY" id="Uje-tW-hc8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Bl-qt-asR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="915"/>
         </scene>
         <!--Recommend List View Controller-->
         <scene sceneID="PgW-D6-cfu">
@@ -274,6 +352,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="xL6-Ri-1q1" id="jga-Zh-tVe"/>
+                                    <outlet property="delegate" destination="xL6-Ri-1q1" id="lWN-pO-lZq"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XZ8-Zr-TF6"/>
@@ -289,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jkb-hI-93E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-265" y="1105"/>
+            <point key="canvasLocation" x="-1065" y="1113"/>
         </scene>
         <!--Recommend List View Controller-->
         <scene sceneID="tKE-md-Mhj">
@@ -338,6 +420,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="e2e-72-3gD" id="roP-yk-5e3"/>
+                                    <outlet property="delegate" destination="e2e-72-3gD" id="nm8-I4-BsM"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ATZ-ga-qjI"/>
@@ -350,16 +436,20 @@
                             <constraint firstItem="Lm1-tz-0a6" firstAttribute="leading" secondItem="ut6-bU-LNL" secondAttribute="leading" id="xob-uU-rGY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sectionTitle" destination="aCC-06-cQy" id="uDK-gA-eMj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHb-WE-RxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-265" y="705"/>
+            <point key="canvasLocation" x="-1065" y="690"/>
         </scene>
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="img_header" width="400" height="450"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
