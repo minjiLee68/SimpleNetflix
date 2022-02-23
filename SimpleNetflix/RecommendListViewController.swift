@@ -25,7 +25,7 @@ class RecommendListViewController: UIViewController {
 }
 
 class RecommentListViwModel {
-    enum RecommendingType{
+    enum RecommendingType {
         case award
         case hot
         case my
@@ -44,6 +44,38 @@ class RecommentListViwModel {
     
     private (set) var type: RecommendingType = .my
     private var items: [DummItem] = []
+    
+    var numOfItems: Int{
+        return items.count
+    }
+    
+    func item(at index: Int) -> DummItem {
+        return items[index]
+    }
+    
+    func updateType(_ type: RecommendingType) {
+        self.type = type
+    }
+    
+    func fetchItems() {
+        self.items = MovieFetcher.fetch(type)
+    }
+}
+
+class MovieFetcher {
+    static func fetch(_ type: RecommentListViwModel.RecommendingType) -> [DummItem] {
+        switch type {
+        case .award:
+            let movies = (1..<10).map {DummItem(thumbNail: UIImage(named: "img_movie_\($0)")!)}
+            return movies
+        case .hot:
+            let movies = (1..<10).map { DummItem(thumbNail: UIImage(named: "img_movie_\($0)")!)}
+            return movies
+        case .my:
+            let movies = (1..<10).map { $0 * 2 }.map { DummItem(thumbNail: UIImage(named: "img_movie_\($0)")!)}
+            return movies
+        }
+    }
 }
 
 struct DummItem {
