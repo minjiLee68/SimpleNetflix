@@ -40,7 +40,7 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="재생" image="play.fill" catalog="system">
-                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2O-xC-Oog">
@@ -91,7 +91,7 @@
                                                     <constraint firstAttribute="height" constant="200" id="hzZ-0J-VeL"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="e2e-72-3gD" kind="embed" id="myL-ki-7Ue"/>
+                                                    <segue destination="e2e-72-3gD" kind="embed" identifier="award" id="myL-ki-7Ue"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oS6-Mx-7PB">
@@ -100,7 +100,7 @@
                                                     <constraint firstAttribute="height" constant="200" id="4fQ-QN-CwW"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="dIg-g7-3wY" kind="embed" id="Rlx-lN-PWK"/>
+                                                    <segue destination="dIg-g7-3wY" kind="embed" identifier="hot" id="Rlx-lN-PWK"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIZ-N6-hH6">
@@ -109,7 +109,7 @@
                                                     <constraint firstAttribute="height" constant="200" id="rlP-Gz-rUl"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="xL6-Ri-1q1" kind="embed" id="Uqh-MF-5h1"/>
+                                                    <segue destination="xL6-Ri-1q1" kind="embed" identifier="my" id="Uqh-MF-5h1"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -191,7 +191,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tGB-8m-Swb">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommendCell" id="tGB-8m-Swb" customClass="RecommendCell" customModule="SimpleNetflix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FVw-4W-rh6">
@@ -209,6 +209,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="dkp-ch-BFO" secondAttribute="bottom" id="U6t-rs-6o8"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnailImage" destination="dkp-ch-BFO" id="qVm-ly-5oj"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -227,6 +230,9 @@
                             <constraint firstAttribute="bottom" secondItem="zo9-e9-L9o" secondAttribute="bottom" constant="10" id="kvg-zJ-cU0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sectionTitle" destination="MLE-Ft-j8X" id="WPX-pP-jnU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrO-Tl-d4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,57 +253,17 @@
                                     <outlet property="delegate" destination="Yfc-rX-bup" id="U2O-A6-qAU"/>
                                 </connections>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zv6-z5-EJ0">
-                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eEw-0t-Lc7">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="int-M1-MuQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ps8-9c-bLr">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TGN-Uj-weE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="TGN-Uj-weE" secondAttribute="bottom" id="ef7-Zg-z5l"/>
-                                                <constraint firstItem="TGN-Uj-weE" firstAttribute="top" secondItem="ps8-9c-bLr" secondAttribute="top" id="mW5-2Q-CgU"/>
-                                                <constraint firstItem="TGN-Uj-weE" firstAttribute="leading" secondItem="ps8-9c-bLr" secondAttribute="leading" id="zXK-Sq-rvb"/>
-                                                <constraint firstAttribute="trailing" secondItem="TGN-Uj-weE" secondAttribute="trailing" id="zex-vJ-SY2"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="Yfc-rX-bup" id="2WX-ia-RSk"/>
-                                    <outlet property="delegate" destination="Yfc-rX-bup" id="xfm-c6-ZZO"/>
-                                </connections>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fUX-CS-kCb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Zv6-z5-EJ0" firstAttribute="top" secondItem="UVw-dZ-nQY" secondAttribute="bottom" id="4K7-GR-GKR"/>
-                            <constraint firstItem="Zv6-z5-EJ0" firstAttribute="leading" secondItem="fUX-CS-kCb" secondAttribute="leading" id="8wd-1F-0OP"/>
                             <constraint firstItem="UVw-dZ-nQY" firstAttribute="top" secondItem="fUX-CS-kCb" secondAttribute="top" id="MIu-aR-wph"/>
-                            <constraint firstItem="fUX-CS-kCb" firstAttribute="bottom" secondItem="Zv6-z5-EJ0" secondAttribute="bottom" id="PXc-IV-hYy"/>
-                            <constraint firstItem="fUX-CS-kCb" firstAttribute="trailing" secondItem="Zv6-z5-EJ0" secondAttribute="trailing" id="Tnh-Jw-f1s"/>
                             <constraint firstItem="UVw-dZ-nQY" firstAttribute="leading" secondItem="fUX-CS-kCb" secondAttribute="leading" id="Wuu-xz-3H1"/>
                             <constraint firstItem="fUX-CS-kCb" firstAttribute="trailing" secondItem="UVw-dZ-nQY" secondAttribute="trailing" id="uVx-z9-U3h"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="9uM-M9-ZkS"/>
                     <connections>
-                        <outlet property="resultCollectionView" destination="Zv6-z5-EJ0" id="ux4-D1-zDk"/>
                         <outlet property="searchBar" destination="UVw-dZ-nQY" id="Uje-tW-hc8"/>
                     </connections>
                 </viewController>
@@ -332,7 +298,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hUH-jp-quX">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommendCell" id="hUH-jp-quX" customClass="RecommendCell" customModule="SimpleNetflix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zxE-jl-96F">
@@ -350,6 +316,9 @@
                                                 <constraint firstItem="SEp-r5-i2o" firstAttribute="top" secondItem="zxE-jl-96F" secondAttribute="top" id="zS1-XC-a4D"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnailImage" destination="SEp-r5-i2o" id="rik-Ot-7fj"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -368,6 +337,9 @@
                             <constraint firstAttribute="top" secondItem="Rg4-Gw-ODZ" secondAttribute="top" constant="-8" id="xKT-5J-ncG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sectionTitle" destination="Rg4-Gw-ODZ" id="X9h-Rq-gwD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jkb-hI-93E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -400,7 +372,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tlu-5x-eC3">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommendCell" id="tlu-5x-eC3" customClass="RecommendCell" customModule="SimpleNetflix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vrl-cc-wHS">
@@ -418,6 +390,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="gpF-nd-fOo" secondAttribute="trailing" id="z50-vq-J7I"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnailImage" destination="gpF-nd-fOo" id="nAJ-Yw-eUX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

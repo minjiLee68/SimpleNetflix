@@ -20,7 +20,23 @@ class RecommendListViewController: UIViewController {
     }
     
     func updateUI() {
+        sectionTitle.text = viewModel.type.title
+    }
+}
+
+extension RecommendListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommendCell", for: indexPath) as? RecommendCell else {
+            return UICollectionViewCell()
+        }
         
+        let movie = viewModel.item(at: indexPath.item)
+        cell.updateUI(movie: movie)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numOfItems
     }
 }
 
@@ -59,6 +75,14 @@ class RecommentListViwModel {
     
     func fetchItems() {
         self.items = MovieFetcher.fetch(type)
+    }
+}
+
+class RecommendCell: UICollectionViewCell {
+    @IBOutlet weak var thumbnailImage: UIImageView!
+    
+    func updateUI(movie: DummItem) {
+        thumbnailImage.image = movie.thumbNail
     }
 }
 
