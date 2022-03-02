@@ -37,7 +37,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="fQP-Nf-4eM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="재생" image="play.fill" catalog="system">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -253,17 +253,60 @@
                                     <outlet property="delegate" destination="Yfc-rX-bup" id="U2O-A6-qAU"/>
                                 </connections>
                             </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zv6-z5-EJ0">
+                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eEw-0t-Lc7">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResultCell" id="int-M1-MuQ" customClass="ResultCell" customModule="SimpleNetflix" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ps8-9c-bLr">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TGN-Uj-weE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="TGN-Uj-weE" secondAttribute="bottom" id="ef7-Zg-z5l"/>
+                                                <constraint firstItem="TGN-Uj-weE" firstAttribute="top" secondItem="ps8-9c-bLr" secondAttribute="top" id="mW5-2Q-CgU"/>
+                                                <constraint firstItem="TGN-Uj-weE" firstAttribute="leading" secondItem="ps8-9c-bLr" secondAttribute="leading" id="zXK-Sq-rvb"/>
+                                                <constraint firstAttribute="trailing" secondItem="TGN-Uj-weE" secondAttribute="trailing" id="zex-vJ-SY2"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieThumnail" destination="TGN-Uj-weE" id="6lA-E5-KPS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yfc-rX-bup" id="2WX-ia-RSk"/>
+                                    <outlet property="delegate" destination="Yfc-rX-bup" id="xfm-c6-ZZO"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fUX-CS-kCb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Zv6-z5-EJ0" firstAttribute="top" secondItem="UVw-dZ-nQY" secondAttribute="bottom" id="4K7-GR-GKR"/>
+                            <constraint firstItem="Zv6-z5-EJ0" firstAttribute="leading" secondItem="fUX-CS-kCb" secondAttribute="leading" id="8wd-1F-0OP"/>
                             <constraint firstItem="UVw-dZ-nQY" firstAttribute="top" secondItem="fUX-CS-kCb" secondAttribute="top" id="MIu-aR-wph"/>
+                            <constraint firstItem="fUX-CS-kCb" firstAttribute="bottom" secondItem="Zv6-z5-EJ0" secondAttribute="bottom" id="PXc-IV-hYy"/>
+                            <constraint firstItem="fUX-CS-kCb" firstAttribute="trailing" secondItem="Zv6-z5-EJ0" secondAttribute="trailing" id="Tnh-Jw-f1s"/>
                             <constraint firstItem="UVw-dZ-nQY" firstAttribute="leading" secondItem="fUX-CS-kCb" secondAttribute="leading" id="Wuu-xz-3H1"/>
                             <constraint firstItem="fUX-CS-kCb" firstAttribute="trailing" secondItem="UVw-dZ-nQY" secondAttribute="trailing" id="uVx-z9-U3h"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="9uM-M9-ZkS"/>
                     <connections>
+                        <outlet property="resultCollectionView" destination="Zv6-z5-EJ0" id="0BE-Lf-YN8"/>
                         <outlet property="searchBar" destination="UVw-dZ-nQY" id="Uje-tW-hc8"/>
                     </connections>
                 </viewController>
@@ -427,9 +470,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
