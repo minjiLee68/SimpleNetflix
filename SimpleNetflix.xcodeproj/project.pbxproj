@@ -82,10 +82,10 @@
 				0AFFF3AC27B0FD2D00F57939 /* PlayerViewController.swift */,
 				0AFFF3AE27B0FD4200F57939 /* PlayerView.swift */,
 				0AFFF39427B0FC5400F57939 /* Main.storyboard */,
+				0A89870427CF4EA5007AB14A /* Player.storyboard */,
 				0AFFF39727B0FC5400F57939 /* Assets.xcassets */,
 				0AFFF39927B0FC5400F57939 /* LaunchScreen.storyboard */,
 				0AFFF39C27B0FC5400F57939 /* Info.plist */,
-				0A89870427CF4EA5007AB14A /* Player.storyboard */,
 			);
 			path = SimpleNetflix;
 			sourceTree = "<group>";
