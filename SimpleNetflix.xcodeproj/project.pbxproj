@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A89870327CF4C01007AB14A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A89870227CF4C01007AB14A /* Kingfisher */; };
+		0A89870527CF4EA5007AB14A /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A89870427CF4EA5007AB14A /* Player.storyboard */; };
 		0AFFF38F27B0FC5400F57939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF38E27B0FC5400F57939 /* AppDelegate.swift */; };
 		0AFFF39127B0FC5400F57939 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF39027B0FC5400F57939 /* SceneDelegate.swift */; };
 		0AFFF39627B0FC5400F57939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AFFF39427B0FC5400F57939 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A89870427CF4EA5007AB14A /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
 		0AFFF38B27B0FC5400F57939 /* SimpleNetflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNetflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AFFF38E27B0FC5400F57939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AFFF39027B0FC5400F57939 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				0AFFF39727B0FC5400F57939 /* Assets.xcassets */,
 				0AFFF39927B0FC5400F57939 /* LaunchScreen.storyboard */,
 				0AFFF39C27B0FC5400F57939 /* Info.plist */,
+				0A89870427CF4EA5007AB14A /* Player.storyboard */,
 			);
 			path = SimpleNetflix;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AFFF39B27B0FC5400F57939 /* LaunchScreen.storyboard in Resources */,
+				0A89870527CF4EA5007AB14A /* Player.storyboard in Resources */,
 				0AFFF39827B0FC5400F57939 /* Assets.xcassets in Resources */,
 				0AFFF39627B0FC5400F57939 /* Main.storyboard in Resources */,
 			);
